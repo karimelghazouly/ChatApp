@@ -14,4 +14,9 @@ socketio = socket(server);
 
 socketio.on('connection',function(socket){
     console.log('hamadasdassadasdsd done');
+    
+    socket.on('chat',function(data){
+        socketio.sockets.emit('chat',data);
+    });
 });
+
